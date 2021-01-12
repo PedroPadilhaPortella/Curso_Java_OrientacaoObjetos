@@ -34,5 +34,7 @@ public class Problema_Com_POO {
 			System.out.println("Larger area: X");
 		else
 		System.out.println("Larger ares: Y");
+		
+		sc.close();
 	}
 }
