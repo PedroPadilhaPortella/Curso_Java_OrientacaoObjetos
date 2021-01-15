@@ -1,9 +1,7 @@
-package Application;
+package Exercicio_02;
 
 import java.util.Locale;
 import java.util.Scanner;
-
-import Entities.Employee;
 
 
 public class Exercicio_2 {

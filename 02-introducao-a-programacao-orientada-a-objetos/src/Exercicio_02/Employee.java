@@ -1,4 +1,4 @@
-package Entities;
+package Exercicio_02;
 
 public class Employee {
 	public String Name;

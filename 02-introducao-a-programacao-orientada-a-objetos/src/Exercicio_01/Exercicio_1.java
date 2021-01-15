@@ -1,9 +1,7 @@
-package Application;
+package Exercicio_01;
 
 import java.util.Locale;
 import java.util.Scanner;
-
-import Entities.Rectangle;
 
 public class Exercicio_1 {
 

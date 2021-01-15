@@ -1,9 +1,7 @@
-package Application;
+package Produtos;
 
 import java.util.Locale;
 import java.util.Scanner;
-
-import Entities.Product;
 
 public class Exercicio_Produtos {
 

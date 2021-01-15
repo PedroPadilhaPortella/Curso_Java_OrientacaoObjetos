@@ -1,4 +1,4 @@
-package Entities;
+package Exercicio_01;
 
 public class Rectangle {
 	public double width;
