@@ -1,12 +1,10 @@
-package Membros_Estaticos;
+package Membros_Estaticos.src;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-
-public class Membros_Estaticos {
-	
-	// public static final double PI = Math.PI;
+public class App {
+    	// public static final double PI = Math.PI;
 
 	public static void main(String[] args) {
 		

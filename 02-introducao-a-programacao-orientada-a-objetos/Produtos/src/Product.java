@@ -1,4 +1,4 @@
-package Produtos;
+package Produtos.src;
 
 public class Product
 {

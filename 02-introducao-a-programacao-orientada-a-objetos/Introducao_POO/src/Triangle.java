@@ -1,4 +1,4 @@
-package Introducao_POO;
+package Introducao_POO.src;
 
 public class Triangle {
 	public double a;

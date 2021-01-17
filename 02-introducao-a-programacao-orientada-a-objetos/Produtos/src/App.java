@@ -1,11 +1,10 @@
-package Produtos;
+package Produtos.src;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Exercicio_Produtos {
-
-	public static void main(String[] args) {
+public class App {
+    public static void main(String[] args) {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
@@ -31,8 +30,6 @@ public class Exercicio_Produtos {
 		product.removeProducts(quantity);
 		System.out.println("\nUpdated data: " + product);
 		
-		
 		sc.close();
 	}
-
 }

@@ -1,4 +1,4 @@
-package Exercicio_03;
+package Exercicio_3.src;
 
 public class Student {
 	public String name;

@@ -1,4 +1,4 @@
-package Membros_Estaticos;
+package Membros_Estaticos.src;
 
 public class Calculator {
 	

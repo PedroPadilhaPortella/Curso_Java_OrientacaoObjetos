@@ -1,9 +1,9 @@
-package Exercicio_01;
+package Exercicio_1.src;
 
 import java.util.Locale;
 import java.util.Scanner;
 
-public class Exercicio_1 {
+public class App {
 
 	public static void main(String[] args) {
 		Locale.setDefault(Locale.US);

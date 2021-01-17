@@ -1,4 +1,4 @@
-package Exercicio_01;
+package Exercicio_1.src;
 
 public class Rectangle {
 	public double width;
