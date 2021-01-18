@@ -32,8 +32,7 @@ public class Product {
     }
 
     public String toString() {
-        return Name + ", $ " + String.format("%.2f", this.getPrice()) + ", " + this.getQuantity() + " units, Total: $ "
-                + String.format("%.2f", totalValueInStock());
+        return Name + ", $ " + String.format("%.2f", this.getPrice()) + ", " + this.getQuantity() + " units, Total: $ " + String.format("%.2f", totalValueInStock());
     }
 
 
