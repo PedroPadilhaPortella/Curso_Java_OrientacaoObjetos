@@ -39,5 +39,20 @@ public class App {
 
         BussinessAccount acc9 = new BussinessAccount(1004, "Ana", 500.0, 200.0);
         acc9.WithDraw(100);
+
+
+        //Polimorfismo
+
+        Account x = new Account(0001, "Pedro", 1000.0);
+        Account y = new BussinessAccount(0001, "Pedro", 1000.0, 500.0);
+        Account z = new SavingsAccount(0001, "Pedro", 1000.0, 0.1);
+
+        x.WithDraw(50.0);
+        y.WithDraw(50.0);
+        z.WithDraw(50.0);
+
+        System.out.println(x.getBalance());
+        System.out.println(y.getBalance());
+        System.out.println(z.getBalance());
     }
 }

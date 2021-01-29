@@ -1,6 +1,6 @@
 package entities;
 
-public class BussinessAccount extends Account
+public final class BussinessAccount extends Account
 {
     private Double LoanLimit;
     
@@ -32,10 +32,9 @@ public class BussinessAccount extends Account
     }
 
     @Override
-    public void WithDraw(double ammount) {
+    public final void WithDraw(double ammount) {
         super.WithDraw(ammount);
         this.Balance -=  2;
         System.out.println("Total of R$ " + this.Balance);
     }
-
 }
