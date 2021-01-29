@@ -28,7 +28,16 @@ public class App {
             SavingsAccount acc6 = (SavingsAccount) acc3;
             acc6.UpdateBalance();
             System.out.println("Update");
-
         }
+
+        //Override
+        Account acc7 = new Account(1004, "Ana", 500.0);
+        acc7.WithDraw(100);
+
+        SavingsAccount acc8 = new SavingsAccount(1004, "Ana", 500.0, 0.01);
+        acc8.WithDraw(100);
+
+        BussinessAccount acc9 = new BussinessAccount(1004, "Ana", 500.0, 200.0);
+        acc9.WithDraw(100);
     }
 }

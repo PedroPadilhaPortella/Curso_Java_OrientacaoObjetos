@@ -26,8 +26,8 @@ public class Account
     }
     
     public void WithDraw(double ammount) {
-        this.Balance -= ammount;
-        System.out.println("WithDraw of R$ " + ammount);
+        this.Balance -= ammount + 5.0;
+        System.out.println("Total of R$ " + this.Balance);
     }
 }
 

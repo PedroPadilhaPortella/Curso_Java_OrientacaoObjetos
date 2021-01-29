@@ -31,4 +31,11 @@ public class BussinessAccount extends Account
         "\nLoanLimit: R$ " + getLoanLimit();
     }
 
+    @Override
+    public void WithDraw(double ammount) {
+        super.WithDraw(ammount);
+        this.Balance -=  2;
+        System.out.println("Total of R$ " + this.Balance);
+    }
+
 }

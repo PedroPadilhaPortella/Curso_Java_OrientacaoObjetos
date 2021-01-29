@@ -19,4 +19,10 @@ public class SavingsAccount extends Account
     public void UpdateBalance() {
         this.Balance += this.Balance * this.InterestRate;
     }
+    
+    @Override
+    public void WithDraw(double ammount) {
+        this.Balance -= ammount;
+        System.out.println("Total of R$ " + this.Balance);
+    }
 }
