@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class App {
+public class WildCards {
     public static void main(String[] args) throws Exception {
     
         Object obj;
