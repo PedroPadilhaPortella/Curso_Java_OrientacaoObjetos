@@ -25,7 +25,11 @@ public class App {
 
 		// Collections.sort(list);
 		list.sort(new MyComparator());
+
+        //interface funcional
 		list.sort(comparator);
+
+        //expressao lambda, que é tratada como uma interface funcional
 		list.sort((p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
 
 		for (Product p : list) {
