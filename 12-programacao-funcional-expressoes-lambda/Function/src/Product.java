@@ -1,5 +1,3 @@
-package entities;
-
 import java.util.Objects;
 
 public class Product {
@@ -36,6 +34,13 @@ public class Product {
         return Objects.hash(Name, Price);
     }
 
+    public static String staticUpperCaseName(Product p) {
+        return p.getName().toUpperCase();
+    }
+    
+    public String notStaticUpperCaseName() {
+        return this.getName().toUpperCase();
+    }
 
     @Override
     public String toString() {
