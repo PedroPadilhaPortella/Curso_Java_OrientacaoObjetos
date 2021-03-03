@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,29 +26,94 @@ public class SellerDaoJdbc implements SellerDAO {
 
 	
 	@Override
-	public void insert(Seller seller) {
-		// TODO Auto-generated method stub
+	public void insert(Seller seller)
+	{
+		PreparedStatement statement = null;
 		
+		try {
+			String sql = "INSERT INTO seller (Name, Email, BirthDate, BaseSalary, DepartmentId) VALUES (?, ?, ?, ?, ?)";
+			statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			
+			statement.setString(1, seller.getName());
+			statement.setString(2, seller.getEmail());
+			statement.setDate(3, new java.sql.Date(seller.getBirthDate().getTime()));
+			statement.setDouble(4, seller.getBaseSalary());
+			statement.setInt(5, seller.getDepartment().getId());
+			
+			int rowsAffected = statement.executeUpdate();
+			
+			if(rowsAffected > 0) {
+				ResultSet resultSet = statement.getGeneratedKeys();
+				
+				if(resultSet.next()) {
+					int id = resultSet.getInt(1);
+					seller.setId(id);
+				}
+				DB.closeResultSet(resultSet);
+			} else {
+				throw new DbException("Unexpected error! No rows affected.");
+			}
+		}
+		catch(SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+		finally {
+			DB.closeStatement(statement);
+		}
 	}
 
 	
 	@Override
-	public void update(Seller seller) {
-		// TODO Auto-generated method stub
+	public void update(Seller seller)
+	{
+		PreparedStatement statement = null;
 		
+		try {
+			String sql = "UPDATE seller SET Name = ?, Email = ?, BirthDate = ?, BaseSalary = ?, DepartmentId = ? WHERE Id = ?";
+			statement = connection.prepareStatement(sql);
+			
+			statement.setString(1, seller.getName());
+			statement.setString(2, seller.getEmail());
+			statement.setDate(3, new java.sql.Date(seller.getBirthDate().getTime()));
+			statement.setDouble(4, seller.getBaseSalary());
+			statement.setInt(5, seller.getDepartment().getId());
+			statement.setInt(6, seller.getId());
+			
+			statement.executeUpdate();
+		}
+		catch(SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+		finally {
+			DB.closeStatement(statement);
+		}
 	}
 
 	
 	@Override
-	public void deleteById(Integer id) {
-		// TODO Auto-generated method stub
+	public void deleteById(Integer id)
+	{
+		PreparedStatement statement = null;
 		
+		try {
+			String sql = "DELETE FROM seller WHERE Id = ?";
+			statement = connection.prepareStatement(sql);
+			
+			statement.setInt(1, id);
+			statement.executeUpdate();
+		}
+		catch(SQLException e) {
+			throw new DbException(e.getMessage());
+		}
+		finally {
+			DB.closeStatement(statement);
+		}
 	}
 
 	
 	@Override
-	public Seller findById(Integer id) {
-		
+	public Seller findById(Integer id)
+	{
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 		
@@ -63,7 +129,6 @@ public class SellerDaoJdbc implements SellerDAO {
 				Seller seller = instantiateSeller(resultSet, department);
 				return seller;
 			}
-			
 			return null;
 		}
 		catch(SQLException e) {
@@ -77,7 +142,8 @@ public class SellerDaoJdbc implements SellerDAO {
 
 	
 	@Override
-	public List<Seller> findAll() {
+	public List<Seller> findAll()
+	{
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 		
@@ -116,7 +182,8 @@ public class SellerDaoJdbc implements SellerDAO {
 	
 	
 	@Override
-	public List<Seller> findByDepartment(Department department) {
+	public List<Seller> findByDepartment(Department department)
+	{
 		PreparedStatement statement = null;
 		ResultSet resultSet = null;
 		
@@ -174,5 +241,4 @@ public class SellerDaoJdbc implements SellerDAO {
 		seller.setDepartment(department);
 		return seller;
 	}
-
 }
