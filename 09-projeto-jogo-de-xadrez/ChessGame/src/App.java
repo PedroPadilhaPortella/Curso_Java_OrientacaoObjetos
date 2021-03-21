@@ -1,5 +1,9 @@
+import BoardGame.Position;
+
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println("Hello, World!");
+        
+        Position p = new Position(3, 5);
+        System.out.println(p);
     }
 }
