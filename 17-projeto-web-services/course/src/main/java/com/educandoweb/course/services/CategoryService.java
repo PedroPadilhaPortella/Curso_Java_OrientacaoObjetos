@@ -28,7 +28,7 @@ public class CategoryService
 	
 	public Category findById(Long id) {
 		Optional<Category> category = categoryRepository.findById((id));
-		return category.get();
+		return category.orElseThrow(() -> new ResourceNotFoundException(id));
 	}
 	
 	public Category insert(Category category) {

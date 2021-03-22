@@ -47,10 +47,9 @@ public class UserService
 	
 	public User update(Long id, User user) {
 		try {
-			
-		User entity = userRepository.getOne(id);
-		updateData(entity, user);
-		return userRepository.save(entity);
+			User entity = userRepository.getOne(id);
+			updateData(entity, user);
+			return userRepository.save(entity);
 		} catch(EntityNotFoundException e) {
 			throw new ResourceNotFoundException(id);
 		}

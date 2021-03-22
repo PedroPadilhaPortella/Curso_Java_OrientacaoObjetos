@@ -39,13 +39,12 @@ public class Product implements Serializable
 	
 	public Product() {}
 
-	public Product(Long id, String name, String description, Double price, String imageUrl) {
-		super();
+	public Product(Long id, String name, String description, Double price) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.price = price;
-		this.imageUrl = imageUrl;
+		this.imageUrl = this.name.replaceAll(" ", "-").toLowerCase();
 	}
 
 	public Long getId() {
