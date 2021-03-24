@@ -26,6 +26,11 @@ public class Position {
         this.Column = Column;
     }
 
+    public void setValues(int row, int column) {
+        this.Row = row;
+        this.Column = column;
+    }
+
     @Override
     public String toString() {
         return Row + ", " + Column;
