@@ -9,7 +9,7 @@ public class _06_Intervalo {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("Código Quantidade");
+		System.out.println("Codigo Quantidade");
 		
 		double numero = sc.nextDouble();
 		
