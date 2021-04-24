@@ -1,13 +1,13 @@
-package com.pedro.apirestmongo;
+package com.pedro.apirestmongodb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApiRestMongoApplication {
+public class ApiRestMongodbApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApiRestMongoApplication.class, args);
+		SpringApplication.run(ApiRestMongodbApplication.class, args);
 	}
 
 }
