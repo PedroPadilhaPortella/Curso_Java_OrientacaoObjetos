@@ -9,12 +9,12 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.pedro</groupId>
-	<artifactId>api-rest-mongodb</artifactId>
+	<artifactId>api-rest-mongo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>api-rest-mongodb</name>
+	<name>api-rest-mongo</name>
 	<description>Projeto Api Restful com MongoDB</description>
 	<properties>
-		<java.version>16</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -26,6 +26,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
 	</dependencies>
 
